@@ -1,0 +1,11 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Image Display</title>
+</head>
+<body>
+    <!-- Dynamically generate the image URL -->
+    <a th:href="${imageUrl}" target="_blank">
+        <img th:src="${imageUrl}" alt="Employee Image">
+    </a>
+</body>
+</html>
