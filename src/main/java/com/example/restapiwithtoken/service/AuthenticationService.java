@@ -18,7 +18,6 @@ import com.example.restapiwithtoken.user.Role;
 import com.example.restapiwithtoken.user.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 
 @Service

@@ -13,6 +13,8 @@ public class FoodRequest {
 
     String foodname;
     String fooddecription;
+    String foodimage;
     String employeeid;
+    int foodid;
 
 }

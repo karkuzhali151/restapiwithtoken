@@ -25,6 +25,7 @@ public class Food {
     private int foodid;
     private String foodname;
     private String fooddecription;
+    private String foodimage;
     private String createdby;
     private Date createdat;
 }
