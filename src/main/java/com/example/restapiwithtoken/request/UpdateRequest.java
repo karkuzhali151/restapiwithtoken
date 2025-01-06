@@ -11,10 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UpdateRequest {
 
-    private int employeeid;
     private String employeename;
     private String email;
-    private String profileimage;
-
 
 }

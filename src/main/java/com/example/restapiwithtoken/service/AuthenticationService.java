@@ -139,15 +139,23 @@ public class AuthenticationService {
 
     public AuthenticationResponse updateemployee(UpdateRequest updateRequest) {
 
-        var users = userRepository.findByEmployeeid(updateRequest.getEmployeeid());
+        var authentication = SecurityContextHolder.getContext().getAuthentication();
+    
+        var user =authentication.getPrincipal();
+
+        User user1 = (User) user;
+   
+        var users = userRepository.findByEmail(user1.getEmail());
         if (users.isEmpty()) {
-            throw new EntityNotFoundException("User not found with ID: " + updateRequest.getEmployeeid());
+            return AuthenticationResponse.builder()
+            .message("User not found")
+            .status("1")
+            .build();
         }
 
-        User existingUser = users.get(0);
+        User existingUser = users.get();
         existingUser.setEmployeename(updateRequest.getEmployeename());
         existingUser.setEmail(updateRequest.getEmail());
-        existingUser.setProfileimage(updateRequest.getProfileimage());
 
         userRepository.save(existingUser);
 
