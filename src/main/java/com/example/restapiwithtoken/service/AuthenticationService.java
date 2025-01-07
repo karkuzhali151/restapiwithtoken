@@ -104,8 +104,9 @@ public class AuthenticationService {
         .build();
     }
 
-    public EmployeeDataResponse getemployeebyid() {
+    public EmployeeDataResponse getemployee() {
 
+        // Using Access Token to get the Employee Details//
         var authentication = SecurityContextHolder.getContext().getAuthentication();
     
         var user =authentication.getPrincipal();

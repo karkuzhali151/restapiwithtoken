@@ -44,7 +44,7 @@ public class EmployeeController {
     @GetMapping("GetEmployee")
     public ResponseEntity<EmployeeDataResponse> getemployee() {
 
-        return ResponseEntity.ok(authenticationService.getemployeebyid());
+        return ResponseEntity.ok(authenticationService.getemployee());
     }
 
     @PostMapping("UpdateEmployee")

@@ -35,9 +35,6 @@ public class AuthenticationController {
     private static final String UPLOAD_DIR = "uploads/";
     private final AuthenticationService authenticationService;
 
-
-
-
     @PostMapping("register")
     public ResponseEntity<AuthenticationResponse> register(@RequestBody RegisterRequest registerRequest) {
     
@@ -50,12 +47,12 @@ public class AuthenticationController {
         return ResponseEntity.ok(authenticationService.login(loginRequest));
     }
 
-     @GetMapping("test")
+    @GetMapping("test")
     public ResponseEntity<String> test() {
         return ResponseEntity.ok("Endpoint is accessible");
     }
 
-     @GetMapping("image/{imageName}")
+    @GetMapping("image/{imageName}")
     public ResponseEntity<Resource> getImages(@PathVariable String imageName) {
         try {
             Path imagePath = Paths.get(UPLOAD_DIR).resolve(imageName).normalize();
