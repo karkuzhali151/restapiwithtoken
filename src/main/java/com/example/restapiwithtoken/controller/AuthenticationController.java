@@ -53,7 +53,7 @@ public class AuthenticationController {
     }
 
     @GetMapping("image/{imageName}")
-    public ResponseEntity<Resource> getImages(@PathVariable String imageName) {
+    public ResponseEntity<Resource> viewImage(@PathVariable String imageName) {
         try {
             Path imagePath = Paths.get(UPLOAD_DIR).resolve(imageName).normalize();
             Resource resource = new UrlResource(imagePath.toUri());

@@ -58,7 +58,7 @@ public class EmployeeController {
         String fileName = "";
         try {
 
-            fileName = ""+System.currentTimeMillis();
+            fileName = System.currentTimeMillis()+".jpg";
             Path filePath = Paths.get(UPLOAD_DIR + fileName);
             Files.write(filePath, file.getBytes());
 
